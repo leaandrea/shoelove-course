@@ -10,11 +10,11 @@ const productSchema = new Schema({
   price: { type: String },
   category: {
     type: String
-  },
-  id_tag: {
-    type: Schema.Types.ObjectId,
-    ref: "Tag"
   }
+  // id_tag: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: "Tag"
+  // }
 });
 
 const Product = mongoose.model("Product", productSchema);
