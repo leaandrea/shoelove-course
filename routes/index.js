@@ -7,17 +7,22 @@ router.get(["/", "/home"], (req, res) => {
 });
 
 router.get("/collection", (req, res) => {
-  let collectionName = "whole";
-  let count = Product.countDocuments();
-  res.render("products", collectionName, count);
+  Product.find()
+  .then(shoes => {
+    let collectionName = "whole";
+    let count = shoes.length;
+    let wholeCollection = true;
+    res.render("products", { collectionName, count, wholeCollection });  
+  })
+  .catch(error => console.log(error))
 });
 
 router.get("/women", (req, res) => {
   Product.find({ category: "Women" })
     .then(shoes => {
       let collectionName = "women";
-      let count = Product.countDocuments();
-      res.render("products", { shoes }, collectionName, count);
+      let count = shoes.length;
+      res.render("products", { shoes , collectionName, count});
     })
     .catch(error => {
       console.error(error);
@@ -27,9 +32,9 @@ router.get("/women", (req, res) => {
 router.get("/men", (req, res) => {
   Product.find({ category: "Men" })
     .then(shoes => {
-      let collectionName = "Men";
-      let count = Product.countDocuments();
-      res.render("products", { shoes }, collectionName, count);
+      let collectionName = "men";
+      let count = shoes.length;
+      res.render("products", { shoes, collectionName, count});
     })
     .catch(error => {
       console.error(error);
@@ -39,9 +44,9 @@ router.get("/men", (req, res) => {
 router.get("/kids", (req, res) => {
   Product.find({ category: "Kids" })
     .then(shoes => {
-      let collectionName = "Kis collection";
-      let count = Product.countDocuments();
-      res.render("products", { shoes }, collectionName, count);
+      let collectionName = "kids";
+      let count = shoes.length;
+      res.render("products", { shoes, collectionName, count});
     })
     .catch(error => {
       console.error(error);
