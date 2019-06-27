@@ -27,7 +27,7 @@ router.post("/prod-add", (req, res) => {
 
 router.post("/tag-add", (req, res) => {
   const label = req.body;
-  Tag.create({ label })
+  Tag.create(label)
     .then(newTag => {
       console.log("new tag added:", newTag);
       res.render("products_add");

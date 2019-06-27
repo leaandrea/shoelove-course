@@ -12,7 +12,7 @@ router.get("/collection", (req, res) => {
       let collectionName = "whole";
       let count = shoes.length;
       let wholeCollection = true;
-      res.render("products", { collectionName, count, wholeCollection });
+      res.render("products", { shoes, collectionName, count, wholeCollection });
     })
     .catch(error => console.log(error));
 });
