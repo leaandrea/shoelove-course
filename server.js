@@ -20,7 +20,5 @@ app.use(basePageRouter);
 app.use(adminRouter);
 
 const listener = app.listen(process.env.PORT || 8000, () => {
-  console.log(
-    `app started at ${process.env.SITE_URL}`
-  );
+  console.log(`app started at ${process.env.SITE_URL}`);
 });
