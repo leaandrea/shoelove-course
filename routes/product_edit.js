@@ -13,6 +13,8 @@ router.get("/product_edit/:id", (req, res) => {
 });
 
 router.post("/product_edit/:id", (req, res) => {
+  console.log(req.body);
+
   Product.findByIdAndUpdate(req.params.id, req.body)
 
     .then(dbRes => {
