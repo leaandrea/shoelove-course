@@ -7,10 +7,9 @@ const productSchema = new Schema({
   ref: { type: String },
   size: { type: Number },
   description: { type: String },
-  price: { type: Number },
+  price: { type: String },
   category: {
-    type: String,
-    enum: ["Men", "Women", "Kids"]
+    type: String
   },
   id_tag: {
     type: Schema.Types.ObjectId,

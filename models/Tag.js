@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const tagSchema = new Schema({
-  label: String
+  label: { type: String }
 });
 
 const Tag = mongoose.model("Tag", tagSchema);
