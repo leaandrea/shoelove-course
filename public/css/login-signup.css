@@ -1,5 +1,5 @@
 /* SIGNUP */
-.sign.form-container {
+.login.form-container {
   padding: 0 1.2rem;
   display: flex;
   flex-direction: column;
@@ -15,7 +15,7 @@
   margin-bottom: 2.2rem;
 }
 
-.sign.form-container .form-title {
+.login.form-container .form-title {
   font-size: 2.3em;
   font-weight: 700;
   margin-bottom: 0.5rem;
