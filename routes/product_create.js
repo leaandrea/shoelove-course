@@ -20,7 +20,7 @@ router.post("/prod-add", (req, res) => {
   })
     .then(newShoe => {
       console.log("new product added:", newShoe);
-      res.redirect("products_manage");
+      res.redirect("/prod-manage");
     })
     .catch(error => console.error("error creating product:", error));
 });
