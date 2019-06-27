@@ -1,56 +1,55 @@
 const express = require("express");
 const router = new express.Router();
 const Product = require("../models/Product");
+const Tag = require("../models/Tag");
 
 router.get(["/", "/home"], (req, res) => {
   res.render("index");
 });
 
 router.get("/collection", (req, res) => {
-  Product.find()
-    .then(shoes => {
+  Promise.all([Product.find().catch(error => console.log(error)), Tag.find().catch(error => console.error(error))])
+    .then(values => {
+      let shoes = values[0];
+      let tags = values[1];
       let collectionName = "whole";
       let count = shoes.length;
       let wholeCollection = true;
-      res.render("products", { shoes, collectionName, count, wholeCollection });
+      res.render("products", { shoes, collectionName, count, wholeCollection, tags });    
     })
-    .catch(error => console.log(error));
 });
 
 router.get("/women", (req, res) => {
-  Product.find({ category: "Women" })
-    .then(shoes => {
+  Promise.all([Product.find({ category: "Women" }).catch(error => console.log(error)), Tag.find().catch(error => console.error(error))])
+    .then(values => {
+      let shoes = values[0];
+      let tags = values[1];
       let collectionName = "women";
       let count = shoes.length;
-      res.render("products", { shoes, collectionName, count });
+      res.render("products", { shoes, collectionName, count, tags });
     })
-    .catch(error => {
-      console.error(error);
-    });
 });
 
 router.get("/men", (req, res) => {
-  Product.find({ category: "Men" })
-    .then(shoes => {
+  Promise.all([Product.find({ category: "Men" }).catch(error => console.log(error)), Tag.find().catch(error => console.error(error))])
+    .then(values => {
+      let shoes = values[0];
+      let tags = values[1];
       let collectionName = "men";
       let count = shoes.length;
-      res.render("products", { shoes, collectionName, count });
+      res.render("products", { shoes, collectionName, count, tags });
     })
-    .catch(error => {
-      console.error(error);
-    });
 });
 
 router.get("/kids", (req, res) => {
-  Product.find({ category: "Kids" })
-    .then(shoes => {
+  Promise.all([Product.find({ category: "Kids" }).catch(error => console.log(error)), Tag.find().catch(error => console.error(error))])
+    .then(values => {
+      let shoes = values[0];
+      let tags = values[1];
       let collectionName = "kids";
       let count = shoes.length;
-      res.render("products", { shoes, collectionName, count });
+      res.render("products", { shoes, collectionName, count, tags });
     })
-    .catch(error => {
-      console.error(error);
-    });
 });
 
 router.get("/signup", (req, res) => {
