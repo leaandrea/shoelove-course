@@ -1,36 +1,49 @@
 <div class="big-container manage-products-wrapper">
   <h3 class="manage-products-title">Manage your Sneakers catalog</h3>
+
   <table class="product-manage-table">
     <thead>
       <tr class="table-row">
         <th colspan="1" class="table-head">Sneaker Image</th>
         <th colspan="1" class="table-head">Sneaker Name</th>
         <th colspan="1" class="table-head">Sneaker Ref</th>
-        <th colspan="1" class="table-head">Sneaker Prixe</th>
+        <th colspan="1" class="table-head">Sneaker Price</th>
         <th colspan="1" class="table-head"> </a> Edit</th>
         <th colspan="1" class="table-head">Delete</th>
       </tr>
-
     </thead>
+
+    {{#each shoes}}
     <tbody>
       <tr class="table-row">
         <td class="table-division">
-          <div><img src="/medias/img/shoe.png" alt="img" class="table-image" /></div>
+          <div>
+            <img src="/medias/img/shoe.png" alt="img" class="table-image" /></div>
         </td>
         <td class="table-division">
-          <div>Nike Revolution</div>
+          <div>
+            {{!-- Nike Revolution --}}
+            {{this.name}}
+
+          </div>
         </td>
         <td class="table-division">
-          <div>$34</div>
+          <div>
+            {{!-- $34 --}}
+            ${{this.price}}
+          </div>
         </td>
         <td class="table-division">
-          <div>N2345H</div>
+          <div>
+            {{this.ref}}
+            {{!-- N2345H --}}
+          </div>
         </td>
-        <td class="table-division"><a href="/product_edit" class="fa fa-edit table-icon"></a>
+        <td class="table-division"><a href="/product_edit/{{this._id}}" class="fa fa-edit table-icon"></a>
         <td class="table-division"><a href="/deleteproduct/{{this._id}}" class="fa fa-trash table-icon"
             aria-hidden="true"></a></td>
       </tr>
-      <tr class="table-row">
+      {{!-- <tr class="table-row">
         <td class="table-division">
           <div><img src="/medias/img/shoe.png" alt="img" class="table-image" /></div>
         </td>
@@ -46,7 +59,9 @@
         <td class="table-division"><a href="/product-edit" class="fa fa-edit table-icon"></a>
         <td class="table-division"><a href="/deleteproduct/{{this._id}}" class="fa fa-trash table-icon"
             aria-hidden="true"></a></td>
-      </tr>
+      </tr> --}}
+
     </tbody>
+    {{/each }}
   </table>
 </div>

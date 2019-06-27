@@ -3,13 +3,17 @@ const router = new express.Router();
 const Product = require("../models/Product");
 
 router.get("/prod-manage", (req, res) => {
-  res.render("products_manage");
+  Product.find()
+    .then(shoes => {
+      res.render("products_manage", { shoes });
+    })
+    .catch(dbErr => console.log(dbErr));
 });
 
-router.post("/deleteproduct/:id", (req, res) => {
+router.get("/deleteproduct/:id", (req, res) => {
   Product.findByIdAndRemove(req.params.id)
-    .then(dbRes => {
-      console.log(dbRes);
+    .then(shoes => {
+      console.log(shoes);
       res.redirect("/prod-manage");
     })
     .catch(err => console.log(err));
