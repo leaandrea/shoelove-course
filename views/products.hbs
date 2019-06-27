@@ -4,93 +4,104 @@
   <aside class="category-wrapper">
     <h4 class="category-title">All Tags</h4>
     <ul class="category-list">
-      <li class="category-list-item"> <a href="">Tag 1</a> </li>
-      <li class="category-list-item"> <a href="">Tag 2</a></li>
-      <li class="category-list-item"> <a href="">Tag 3</a></li>
+      <li class="category-list-item"> <a href="">Friendly</a> </li>
+      <li class="category-list-item"> <a href="">Urban style</a></li>
+      <li class="category-list-item"> <a href="">Dope</a></li>
     </ul>
   </aside>
 
   {{!-- PRODUCTS--}}
   <section class="products-wrapper">
     <div class="products-infos">
-      <h4 class="products-title">whole collection <span class="products-count">(35)</span></h4>
-      <p class="products-subtitle">Prepare for your miles with the latest styles and colors of women’s running shoes.
+      <h4 class="products-title">{{collectionName}} collection <span class="products-count">{{count}}</span></h4>
+      {{#if collectionName != "whole"}}
+      <p class="products-subtitle">Prepare for your miles with the latest styles and colors of {{collectionName}} running shoes.
         Take advantage of signature a footwear technologies including Zoom, Flyknite, and find the
         pairs running shoes that align with your running philosophy.</p>
+      {{else}}
+        <p class="products-subtitle">Prepare for your miles with the latest styles and colors of running shoes.
+        Take advantage of signature a footwear technologies including Zoom, Flyknite, and find the
+        pairs running shoes that align with your running philosophy.</p>
+      {{/if}}
+
     </div>
+    {{#each shoes}}
     <div class="products-grid flexed-item">
       <a href="/one-product" class="product-item-wrapper">
         <div class="product-img"><img src="medias/img/shoe.png" alt="shoe"></div>
-        <p class="product-name">Sneacker Model Name</p>
-        <p class="product-cat">Product main category</p>
-        <p class="product-price">$120</p>
+        <p class="product-name">{{this.name}}</p>
+        <p class="product-cat">{{this.category}}</p>
+        <p class="product-price">{{this.price}}</p>
       </a>
-      <a href="/one-product" class="product-item-wrapper">
-        <div class="product-img"><img src="medias/img/shoe.png" alt="shoe"></div>
-        <p class="product-name">Sneacker Model Name</p>
-        <p class="product-cat">Product main category</p>
-        <p class="product-price">$120</p>
-      </a>
-      <a href="/one-product" class="product-item-wrapper">
-        <div class="product-img"><img src="medias/img/shoe.png" alt="shoe"></div>
-        <p class="product-name">Sneacker Model Name</p>
-        <p class="product-cat">Product main category</p>
-        <p class="product-price">$120</p>
-      </a>
-      <a href="/one-product" class="product-item-wrapper">
-        <div class="product-img"><img src="medias/img/shoe.png" alt="shoe"></div>
-        <p class="product-name">Sneacker Model Name</p>
-        <p class="product-cat">Product main category</p>
-        <p class="product-price">$120</p>
-      </a>
-      <a href="/one-product" class="product-item-wrapper">
-        <div class="product-img"><img src="medias/img/shoe.png" alt="shoe"></div>
-        <p class="product-name">Sneacker Model Name</p>
-        <p class="product-cat">Product main category</p>
-        <p class="product-price">$120</p>
-      </a>
-      <a href="/one-product" class="product-item-wrapper">
-        <div class="product-img"><img src="medias/img/shoe.png" alt="shoe"></div>
-        <p class="product-name">Sneacker Model Name</p>
-        <p class="product-cat">Product main category</p>
-        <p class="product-price">$120</p>
-      </a>
-      <a href="/one-product" class="product-item-wrapper">
-        <div class="product-img"><img src="medias/img/shoe.png" alt="shoe"></div>
-        <p class="product-name">Sneacker Model Name</p>
-        <p class="product-cat">Product main category</p>
-        <p class="product-price">$120</p>
-      </a>
-      <a href="/one-product" class="product-item-wrapper">
-        <div class="product-img"><img src="medias/img/shoe.png" alt="shoe"></div>
-        <p class="product-name">Sneacker Model Name</p>
-        <p class="product-cat">Product main category</p>
-        <p class="product-price">$120</p>
-      </a>
-      <a href="/one-product" class="product-item-wrapper">
-        <div class="product-img"><img src="medias/img/shoe.png" alt="shoe"></div>
-        <p class="product-name">Sneacker Model Name</p>
-        <p class="product-cat">Product main category</p>
-        <p class="product-price">$120</p>
-      </a>
-      <a href="/one-product" class="product-item-wrapper">
-        <div class="product-img"><img src="medias/img/shoe.png" alt="shoe"></div>
-        <p class="product-name">Sneacker Model Name</p>
-        <p class="product-cat">Product main category</p>
-        <p class="product-price">$120</p>
-      </a>
-          <a href="/one-product" class="product-item-wrapper">
-        <div class="product-img"><img src="medias/img/shoe.png" alt="shoe"></div>
-        <p class="product-name">Sneacker Model Name</p>
-        <p class="product-cat">Product main category</p>
-        <p class="product-price">$120</p>
-      </a>
-          <a href="/one-product" class="product-item-wrapper">
-        <div class="product-img"><img src="medias/img/shoe.png" alt="shoe"></div>
-        <p class="product-name">Sneacker Model Name</p>
-        <p class="product-cat">Product main category</p>
-        <p class="product-price">$120</p>
-      </a>
+    {{/each}}
     </div>
+
+{{!--     
+      <a href="/one-product" class="product-item-wrapper">
+        <div class="product-img"><img src="medias/img/shoe.png" alt="shoe"></div>
+        <p class="product-name">Sneacker Model Name</p>
+        <p class="product-cat">Product main category</p>
+        <p class="product-price">$120</p>
+      </a>
+      <a href="/one-product" class="product-item-wrapper">
+        <div class="product-img"><img src="medias/img/shoe.png" alt="shoe"></div>
+        <p class="product-name">Sneacker Model Name</p>
+        <p class="product-cat">Product main category</p>
+        <p class="product-price">$120</p>
+      </a>
+      <a href="/one-product" class="product-item-wrapper">
+        <div class="product-img"><img src="medias/img/shoe.png" alt="shoe"></div>
+        <p class="product-name">Sneacker Model Name</p>
+        <p class="product-cat">Product main category</p>
+        <p class="product-price">$120</p>
+      </a>
+      <a href="/one-product" class="product-item-wrapper">
+        <div class="product-img"><img src="medias/img/shoe.png" alt="shoe"></div>
+        <p class="product-name">Sneacker Model Name</p>
+        <p class="product-cat">Product main category</p>
+        <p class="product-price">$120</p>
+      </a>
+      <a href="/one-product" class="product-item-wrapper">
+        <div class="product-img"><img src="medias/img/shoe.png" alt="shoe"></div>
+        <p class="product-name">Sneacker Model Name</p>
+        <p class="product-cat">Product main category</p>
+        <p class="product-price">$120</p>
+      </a>
+      <a href="/one-product" class="product-item-wrapper">
+        <div class="product-img"><img src="medias/img/shoe.png" alt="shoe"></div>
+        <p class="product-name">Sneacker Model Name</p>
+        <p class="product-cat">Product main category</p>
+        <p class="product-price">$120</p>
+      </a>
+      <a href="/one-product" class="product-item-wrapper">
+        <div class="product-img"><img src="medias/img/shoe.png" alt="shoe"></div>
+        <p class="product-name">Sneacker Model Name</p>
+        <p class="product-cat">Product main category</p>
+        <p class="product-price">$120</p>
+      </a>
+      <a href="/one-product" class="product-item-wrapper">
+        <div class="product-img"><img src="medias/img/shoe.png" alt="shoe"></div>
+        <p class="product-name">Sneacker Model Name</p>
+        <p class="product-cat">Product main category</p>
+        <p class="product-price">$120</p>
+      </a>
+      <a href="/one-product" class="product-item-wrapper">
+        <div class="product-img"><img src="medias/img/shoe.png" alt="shoe"></div>
+        <p class="product-name">Sneacker Model Name</p>
+        <p class="product-cat">Product main category</p>
+        <p class="product-price">$120</p>
+      </a>
+          <a href="/one-product" class="product-item-wrapper">
+        <div class="product-img"><img src="medias/img/shoe.png" alt="shoe"></div>
+        <p class="product-name">Sneacker Model Name</p>
+        <p class="product-cat">Product main category</p>
+        <p class="product-price">$120</p>
+      </a>
+          <a href="/one-product" class="product-item-wrapper">
+        <div class="product-img"><img src="medias/img/shoe.png" alt="shoe"></div>
+        <p class="product-name">Sneacker Model Name</p>
+        <p class="product-cat">Product main category</p>
+        <p class="product-price">$120</p>
+      </a> --}}
   </section>
 </div>

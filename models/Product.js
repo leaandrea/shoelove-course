@@ -10,7 +10,7 @@ const productSchema = new Schema({
   price: { type: Number },
   category: {
     type: String,
-    enum: ["men", "Women", "Kids"]},
+    enum: ["Men", "Women", "Kids"]},
   id_tag: {
       type: Schema.Types.ObjectId,
       ref: "Tag"
