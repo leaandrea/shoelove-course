@@ -5,6 +5,9 @@ const express = require("express");
 const hbs = require("hbs");
 const app = express();
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
 app.locals.site_url = process.env.SITE_URL;
 // used in front end to perform ajax request on a url var instead of hardcoding it
 
