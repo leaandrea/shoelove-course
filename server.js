@@ -19,10 +19,16 @@ hbs.registerPartials(__dirname + "/views/partials");
 const basePageRouter = require("./routes/index");
 const adminRouter = require("./routes/admin");
 const authRouter = require("./routes/auth");
+const prodDelete = require("./routes/product_delete");
+const prodCreate = require("./routes/product_create");
+const prodEdit = require("./routes/product_edit");
 
 app.use(basePageRouter);
 app.use(adminRouter);
 app.use("/", authRouter);
+app.use(prodEdit);
+app.use(prodDelete);
+app.use(prodCreate);
 
 const listener = app.listen(process.env.PORT || 8000, () => {
   console.log(`app started at ${process.env.SITE_URL}`);
