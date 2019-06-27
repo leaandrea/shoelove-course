@@ -14,7 +14,7 @@
   <section class="products-wrapper">
     <div class="products-infos">
       <h4 class="products-title">{{collectionName}} collection <span class="products-count">{{count}}</span></h4>
-      {{#if collectionName != "whole"}}
+      {{#unless wholeCollection}}
       <p class="products-subtitle">Prepare for your miles with the latest styles and colors of {{collectionName}} running shoes.
         Take advantage of signature a footwear technologies including Zoom, Flyknite, and find the
         pairs running shoes that align with your running philosophy.</p>
@@ -22,7 +22,7 @@
         <p class="products-subtitle">Prepare for your miles with the latest styles and colors of running shoes.
         Take advantage of signature a footwear technologies including Zoom, Flyknite, and find the
         pairs running shoes that align with your running philosophy.</p>
-      {{/if}}
+      {{/unless}}
 
     </div>
     {{#each shoes}}
