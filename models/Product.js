@@ -10,13 +10,13 @@ const productSchema = new Schema({
   price: { type: Number },
   category: {
     type: String,
-    enum: ["Men", "Women", "Kids"]},
-  id_tag: {
-      type: Schema.Types.ObjectId,
-      ref: "Tag"
+    enum: ["Men", "Women", "Kids"]
   },
-  }),
-
+  id_tag: {
+    type: Schema.Types.ObjectId,
+    ref: "Tag"
+  }
+});
 
 const Product = mongoose.model("Product", productSchema);
-model.exports = Product;
+module.exports = Product;

@@ -13,40 +13,40 @@ router.get("/collection", (req, res) => {
 });
 
 router.get("/women", (req, res) => {
-  Product.find({category: "women"})
-  .then(shoes => {
-    let collectionName = "women";
-    let count = Product.countDocuments();
-    res.render("products", {shoes}, collectionName, count)
-  })
-  .catch(error => {
-    console.error(error)
-  })
-})
+  Product.find({ category: "Women" })
+    .then(shoes => {
+      let collectionName = "Women";
+      let count = Product.countDocuments();
+      res.render("products", { shoes }, collectionName, count);
+    })
+    .catch(error => {
+      console.error(error);
+    });
+});
 
 router.get("/men", (req, res) => {
-  Product.find({category: "men"})
-  .then(shoes => {
-    let collectionName = "men";
-    let count = Product.countDocuments();
-    res.render("products", {shoes}, collectionName, count)
-  })
-  .catch(error => {
-    console.error(error)
-  })
-})
+  Product.find({ category: "Men" })
+    .then(shoes => {
+      let collectionName = "Men";
+      let count = Product.countDocuments();
+      res.render("products", { shoes }, collectionName, count);
+    })
+    .catch(error => {
+      console.error(error);
+    });
+});
 
 router.get("/kids", (req, res) => {
-  Product.find({category: "kids"})
-  .then(shoes => {
-    let collectionName = "Kis collection";
-    let count = Product.countDocuments();
-    res.render("products", {shoes}, collectionName, count)
-  })
-  .catch(error => {
-    console.error(error)
-  })
-})
+  Product.find({ category: "Kids" })
+    .then(shoes => {
+      let collectionName = "Kis collection";
+      let count = Product.countDocuments();
+      res.render("products", { shoes }, collectionName, count);
+    })
+    .catch(error => {
+      console.error(error);
+    });
+});
 
 router.get("/signup", (req, res) => {
   res.render("signup");
