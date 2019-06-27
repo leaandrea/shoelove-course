@@ -1,3 +1,7 @@
+const express = require("express");
+const router = new express.Router();
+const Product = require("../models/Product");
+
 router.get("/prod_manage/:id/edit", (req, res) => {
   Product.findById(req.params.id)
     .then(updatedInfos => {
@@ -18,3 +22,5 @@ router.post("/product_edit/:id", (req, res) => {
       console.log("Oops, error as occured, update didn't worked", err);
     });
 });
+
+module.exports = router;
