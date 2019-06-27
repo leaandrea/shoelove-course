@@ -1,26 +1,43 @@
 <div class="one-product-container">
   <div class="sneak-info">
     <div class="sneak-info-header">
-      <h1 class="sneak-name">Nike Shark’s</h1>
-      <p class="sneak-description">A super Sneaker that make your run faster, win time An win money!</p>
-      <p class="sneak-ref">Ref. N345TG5</p>
+      <h1 class="sneak-name">
+        {{!-- Nike Shark’s --}}
+        {{shoes.name}}
+      </h1>
+      <p class="sneak-description">
+        {{shoes.description}}
+        {{!-- A super Sneaker that make your run faster, win time An win money! --}}
+      </p>
+      <p class="sneak-ref">
+        {{shoes.ref}}
+        {{!-- Ref. N345TG5 --}}
+      </p>
       {{!-- <p class="sneak-description">A super Sneaker that make your run faster, win time and money</p> --}}
     </div>
   </div>
   <div class="flexed-item">
     <select name="main-category" id="main_category" class="select sneak-select">
       <option value="">Choose Size</option>
-      <option value="">36</option>
-      <option value="">37</option>
-      <option value="">38</option>
-      <option value="">39</option>
-    </select>  
+      <option value="36">36</option>
+      <option value="37">37</option>
+      <option value="38">38</option>
+      <option value="39">39</option>
+      <option value="40">40</option>
+      <option value="41">41</option>
+      <option value="42">42</option>
+      <option value="43">43</option>
+      <option value="44">44</option>
+      <option value="45">45</option>
+      <option value="46">46</option>
+      <option value="47">47</option>
+    </select>
     <a href="" class="button-primary a-link">Add to cart <i class="fas fa-shopping-cart shop-cart-icon-page"></i></a>
 
   </div>
 
   <div class="sneak-img-container">
-    <img src="./medias/img/shoe.png" alt="img-product" class="sneak-img">
+    <img src=".././medias/img/shoe.png" alt="img-product" class="sneak-img">
   </div>
 
 </div>

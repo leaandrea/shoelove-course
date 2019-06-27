@@ -8,28 +8,29 @@
     <div class="products-infos">
       <h4 class="products-title">{{collectionName}} collection <span class="products-count">{{count}}</span></h4>
       {{#unless wholeCollection}}
-      <p class="products-subtitle">Prepare for your miles with the latest styles and colors of {{collectionName}} running shoes.
+      <p class="products-subtitle">Prepare for your miles with the latest styles and colors of {{collectionName}}
+        running shoes.
         Take advantage of signature a footwear technologies including Zoom, Flyknite, and find the
         pairs running shoes that align with your running philosophy.</p>
       {{else}}
-        <p class="products-subtitle">Prepare for your miles with the latest styles and colors of running shoes.
+      <p class="products-subtitle">Prepare for your miles with the latest styles and colors of running shoes.
         Take advantage of signature a footwear technologies including Zoom, Flyknite, and find the
         pairs running shoes that align with your running philosophy.</p>
       {{/unless}}
 
     </div>
     <div class="products-grid flexed-item">
-    {{#each shoes}}
-      <a href="/one-product" class="product-item-wrapper">
+      {{#each shoes}}
+      <a href="/oneProduct/{{this._id}}" class="product-item-wrapper">
         <div class="product-img"><img src="medias/img/shoe.png" alt="shoe"></div>
         <p class="product-name">{{this.name}}</p>
         <p class="product-cat">{{this.category}}</p>
         <p class="product-price">{{this.price}}</p>
       </a>
-    {{/each}}
+      {{/each}}
     </div>
 
-{{!--     
+    {{!--     
       <a href="/one-product" class="product-item-wrapper">
         <div class="product-img"><img src="medias/img/shoe.png" alt="shoe"></div>
         <p class="product-name">Sneacker Model Name</p>

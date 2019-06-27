@@ -22,10 +22,11 @@ const authRouter = require("./routes/auth");
 const prodDelete = require("./routes/product_delete");
 const prodCreate = require("./routes/product_create");
 const prodEdit = require("./routes/product_edit");
+const oneProd = require("./routes/oneProduct");
 
 app.use(basePageRouter);
 app.use("/", authRouter);
-
+app.use(oneProd);
 app.use(prodEdit);
 app.use(prodDelete);
 app.use(prodCreate);
