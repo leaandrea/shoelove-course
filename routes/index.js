@@ -8,13 +8,13 @@ router.get(["/", "/home"], (req, res) => {
 
 router.get("/collection", (req, res) => {
   Product.find()
-  .then(shoes => {
-    let collectionName = "whole";
-    let count = shoes.length;
-    let wholeCollection = true;
-    res.render("products", { collectionName, count, wholeCollection });  
-  })
-  .catch(error => console.log(error))
+    .then(shoes => {
+      let collectionName = "whole";
+      let count = shoes.length;
+      let wholeCollection = true;
+      res.render("products", { collectionName, count, wholeCollection });
+    })
+    .catch(error => console.log(error));
 });
 
 router.get("/women", (req, res) => {
@@ -22,7 +22,7 @@ router.get("/women", (req, res) => {
     .then(shoes => {
       let collectionName = "women";
       let count = shoes.length;
-      res.render("products", { shoes , collectionName, count});
+      res.render("products", { shoes, collectionName, count });
     })
     .catch(error => {
       console.error(error);
@@ -34,7 +34,7 @@ router.get("/men", (req, res) => {
     .then(shoes => {
       let collectionName = "men";
       let count = shoes.length;
-      res.render("products", { shoes, collectionName, count});
+      res.render("products", { shoes, collectionName, count });
     })
     .catch(error => {
       console.error(error);
@@ -46,7 +46,7 @@ router.get("/kids", (req, res) => {
     .then(shoes => {
       let collectionName = "kids";
       let count = shoes.length;
-      res.render("products", { shoes, collectionName, count});
+      res.render("products", { shoes, collectionName, count });
     })
     .catch(error => {
       console.error(error);

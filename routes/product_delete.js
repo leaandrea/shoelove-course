@@ -7,8 +7,12 @@ router.get("/prod-manage", (req, res) => {
 });
 
 router.post("/deleteproduct/:id", (req, res) => {
-  Product.findByIdAndRemove(req.params.id).then(dbRes => console.log(dbRes));
-  res.redirect("/prod-manage").catch(err => console.log(err));
+  Product.findByIdAndRemove(req.params.id)
+    .then(dbRes => {
+      console.log(dbRes);
+      res.redirect("/prod-manage");
+    })
+    .catch(err => console.log(err));
 });
 
 module.exports = router;
