@@ -34,7 +34,7 @@
       </div>
       <div class="flexed-item nav-end">
         {{#unless isLoggedOut}}
-        <a href="/login" id="nav_login" class="button-ternary flexed-item nav-end-item">
+        <a href="/logout" id="nav_login" class="button-ternary flexed-item nav-end-item">
           <span class="btn-text">Log Out</span>
         </a>
         {{/unless}}
@@ -42,8 +42,8 @@
         <a href="/login" id="nav_login" class="button-ternary flexed-item nav-end-item">
           <span class="btn-text">Log In</span>
         </a>
-        {{/unless}}
-        <i class="fas fa-shopping-cart shop-cart-icon nav-end-item"></i>
+        {{/unless}} <a href="">
+          <i class="fas fa-shopping-cart shop-cart-icon nav-end-item"></i></a>
       </div>
     </nav>
   </header>

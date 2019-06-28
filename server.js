@@ -51,15 +51,14 @@ const prodDelete = require("./routes/product_delete");
 const prodCreate = require("./routes/product_create");
 const prodEdit = require("./routes/product_edit");
 const oneProd = require("./routes/oneProduct");
-const shopCart = require("./routes/shopcart");
-
+// const shopCart = require("./routes/add-shopcart");
 app.use(basePageRouter);
 app.use("/", authRouter);
 app.use(oneProd);
 app.use(prodEdit);
 app.use(prodDelete);
 app.use(prodCreate);
-app.use(shopCart);
+// app.use(shopCart);
 
 //404 ERROR FUNCTION
 app.use(function(req, res, next) {
