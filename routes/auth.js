@@ -4,6 +4,10 @@ const router = express.Router();
 router.get("/login", (req, res, next) => {
   res.render("login");
 });
+
+router.get("/signup", (req, res, next) => {
+  res.render("auth/signup");
+});
 // User model
 const UserLog = require("../models/UserLog");
 // BCrypt to encrypt passwords

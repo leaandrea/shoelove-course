@@ -3,8 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - (84px));
-
+  /* height: calc(100vh - (84px)); */
 }
 
 .one-product-container>* {
@@ -25,7 +24,7 @@
 }
 
 .sneak-ref {
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   color: rgb(151, 151, 151);
 }
 
@@ -36,16 +35,14 @@
 
 .shop-cart-icon-page {
   color: white;
-  font-size: .7rem;
-  margin-left: .2rem;
+  font-size: 0.7rem;
+  margin-left: 0.2rem;
 }
 
 .sneak-img-container {
   width: 35%;
-  display: flex;
-  justify-content: center;
 }
 
 .sneak-img {
-  width: 75%
+  width: 100%
 }
