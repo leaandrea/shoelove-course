@@ -6,7 +6,8 @@
   height: calc(100vh - (84px));
 
 }
-.one-product-container > * {
+
+.one-product-container>* {
   margin-bottom: 1.2rem;
 }
 
@@ -27,6 +28,7 @@
   margin-top: .5rem;
   color: rgb(151, 151, 151);
 }
+
 .sneak-select {
   width: 135px;
   margin-right: 1rem;
@@ -40,8 +42,10 @@
 
 .sneak-img-container {
   width: 35%;
+  display: flex;
+  justify-content: center;
 }
 
 .sneak-img {
-  width: 100%
+  width: 75%
 }
