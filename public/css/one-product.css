@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* height: calc(100vh - (84px)); */
+  height: calc(100vh - (84px));
 }
 
 .one-product-container>* {
@@ -40,9 +40,11 @@
 }
 
 .sneak-img-container {
+  display: flex;
+  justify-content: center;
   width: 35%;
 }
 
 .sneak-img {
-  width: 100%
+  width: 75%;
 }
