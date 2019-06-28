@@ -9,7 +9,11 @@ const productSchema = new Schema({
   description: { type: String },
   price: { type: String },
   category: { type: String },
-  id_tag: { type: Schema.ObjectId, ref: "Tag" }
+  id_tag: { type: Schema.ObjectId, ref: "Tag" },
+  image_product: {
+    type: String,
+    default: "/medias/img/shoe.png"
+  }
 });
 
 const Product = mongoose.model("Product", productSchema);

@@ -1,5 +1,5 @@
 <div class="big-container product-manage-wrapper flexed-item">
-  <form method="post" action="/prod-add" class="add-product-form">
+  <form method="post" action="/prod-add" class="add-product-form" enctype="multipart/form-data">
     <h3 class="form-title">Add Sneackers to the collection</h3>
     <div class="form-item-wrapper flexed-item">
       <label for="sneacker-name" class="label-name label">Model name</label>
@@ -22,6 +22,10 @@
       <input type="text" class="sneacker-price input" min="1" name="price">
     </div>
     <div class="form-item-wrapper flexed-item">
+      <label for="image_product" class="label-price label">Pick an sneaker</label>
+      <input class="sneacker-price input" type="file" name="image_product">
+    </div>
+    <div class="form-item-wrapper flexed-item">
       <label for="sneacker-main-cat" class="label-main-cat label">Main category</label>
       <select name="category" id="main_category" class="select">
         <option value="">Choose main Category...</option>
@@ -35,7 +39,7 @@
       <select name="id_tag" id="secondary_category" class="select">
         <option value="">Choose Secondary Category...</option>
         {{#each tags}}
-          <option value={{this.label}}>{{this.label}}</option>
+        <option value={{this._id}}>{{this.label}}</option>
         {{/each}}
       </select>
     </div>

@@ -1,5 +1,6 @@
 require("dotenv").config();
 require("./config/db_connection"); // database initial setup
+require("./config/cloudinary");
 
 const express = require("express");
 const hbs = require("hbs");
