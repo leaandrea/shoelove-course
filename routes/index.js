@@ -57,7 +57,8 @@ router.get("/kids", (req, res) => {
   Promise.all([
     Product.find({ category: "Kids" }).catch(error => console.log(error)),
     Tag.find().catch(error => console.error(error))
-  ]).then(values => {
+  ])
+  .then(values => {
     let shoes = values[0];
     let tags = values[1];
     let collectionName = "kids";

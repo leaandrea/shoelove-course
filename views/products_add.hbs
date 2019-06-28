@@ -34,9 +34,9 @@
       <label class="label">Tags</label>
       <select name="id_tag" id="secondary_category" class="select">
         <option value="">Choose Secondary Category...</option>
-        <option value="Friendly">Friendly</option>
-        <option value="Urban style">Urban style</option>
-        <option value="Dope">Dope</option>
+        {{#each tags}}
+          <option value={{this.label}}>{{this.label}}</option>
+        {{/each}}
       </select>
     </div>
     <button class="button-primary add-sneacker-btn">Add to collection</button>
