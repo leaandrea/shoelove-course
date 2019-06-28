@@ -22,7 +22,7 @@
     <div class="products-grid flexed-item">
       {{#each shoes}}
       <a href="/oneProduct/{{this._id}}" class="product-item-wrapper">
-        <div class="product-img"><img src="medias/img/shoe.png" alt="shoe"></div>
+        <div class="product-img"><img src="{{this.image_product}}" alt="shoe"></div>
         <p class="product-name">{{this.name}}</p>
         <p class="product-cat">{{this.category}}</p>
         <p class="product-price">{{this.price}}</p>
