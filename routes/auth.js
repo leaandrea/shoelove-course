@@ -26,18 +26,16 @@ router.post("/login", (req, res, next) => {
     email: email
   })
     .then(user => {
-      console.log(user);
       if (user) {
-        console.log("user trouvé");
         if (bcrypt.compareSync(password, user.password)) {
           // Save the login in the session!
           req.session.currentUser = { email };
           res.redirect("/");
-        } else {
-          res.render("auth/login", {
-            errorMessage: "Incorrect password"
-          });
         }
+      } else {
+        res.render("auth/login", {
+          errorMessage: "Incorrect password or email"
+        });
       }
     })
     .catch(error => {
@@ -76,7 +74,6 @@ router.post("/signup", (req, res, next) => {
     })
       .then(() => {
         if (username === "" || password === "") {
-          console.log("ici");
           res.render("auth/signup", {
             errorMessage: "Indicate an email and a password to sign up"
           });
@@ -88,6 +85,16 @@ router.post("/signup", (req, res, next) => {
       .catch(error => {
         next(error);
       });
+  });
+});
+
+//-------------------------------------------------------
+// LOGOUT PART
+//-------------------------------------------------------
+router.get("/logout", (req, res, next) => {
+  req.session.destroy(err => {
+    // can't access session here
+    res.redirect("/login");
   });
 });
 
