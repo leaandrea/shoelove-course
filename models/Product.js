@@ -12,7 +12,8 @@ const productSchema = new Schema({
   id_tag: { type: Schema.Types.ObjectId, ref: "Tag" },
   image_product: {
     type: String,
-    default: "/medias/img/shoe.png"
+    default:
+      "https://res.cloudinary.com/dnooohvsj/image/upload/v1561721010/shoes-folder/shoe_rqfxwu.png"
   }
 });
 
