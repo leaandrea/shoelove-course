@@ -32,6 +32,18 @@ app.use(
   })
 );
 
+function isLoggedIn(req, res, next) {
+  app.locals.isLoggedIn = Boolean(req.session.currentUser);
+  next();
+}
+app.use(isLoggedIn);
+
+function isLoggedOut(req, res, next) {
+  app.locals.isLoggedOut = Boolean(!req.session.currentUser);
+  next();
+}
+app.use(isLoggedOut);
+
 const basePageRouter = require("./routes/index");
 const authRouter = require("./routes/auth");
 
