@@ -20,6 +20,9 @@
       <label for="password" class="label-ref label">Password</label>
       <input type="password" name="password" class="input-text input" placeholder="••••••" required>
     </div>
+    {{#if errorMessage}}
+    <div class="error-message">{{ errorMessage }}</div>
+    {{/if}}
     <button class="button-primary white">Create Account</button>
   </form>
   <p class="form-sub-infos">Already have an account ? <a href="/login" class="button-link-form">Log In</a></p>
