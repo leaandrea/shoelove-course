@@ -8,8 +8,15 @@ router.get(["/", "/home"], (req, res) => {
 });
 
 router.get("/collection", (req, res) => {
+
+  var query = {};
+
+  if (req.query.tag) query.tag = req.query.tag;
+  console.log(query);
+  
+
   Promise.all([
-    Product.find().catch(error => console.log(error)),
+    Product.find(query).catch(error => console.log(error)),
     Tag.find().catch(error => console.error(error))
   ]).then(values => {
     let shoes = values[0];
@@ -18,6 +25,7 @@ router.get("/collection", (req, res) => {
     let count = shoes.length;
     let wholeCollection = true;
     res.render("products", {
+      tagUrl: "/collection",
       shoes,
       collectionName,
       count,
