@@ -13,8 +13,8 @@ router.get("/prod-add", (req, res) => {
 });
 
 router.post("/prod-add", uploadCloud.single("image_product"), (req, res) => {
-  const { name, ref, size, description, price, category } = req.body;
-  const newImg = { name, ref, size, description, price, category };
+  const { name, ref, size, description, price, category, id_tag } = req.body;
+  const newImg = { name, ref, size, description, price, category, id_tag };
   // const imgUrl = req.file.url;
   // const imgName = req.file.originalname;
   if (req.file) newImg.image_product = req.file.secure_url;
